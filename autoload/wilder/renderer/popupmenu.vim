@@ -365,7 +365,7 @@ function! s:render_lines(state, ctx, result) abort
   let [l:row, l:col] = a:state.position(a:ctx, l:pos,
         \ {'height': l:height, 'width': l:width, 'max_height': l:max_height})
 
-  call a:state.api.move(l:row, l:col, l:height, l:width)
+  call a:state.api.move(l:row - 1, l:col, l:height, l:width)
   call a:state.api.set_option('wrap', v:false)
   call a:state.api.clear_all_highlights()
   call a:state.api.delete_all_lines()
